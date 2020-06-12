@@ -22,14 +22,19 @@ class Home extends React.Component {
             "headers": {
                 "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
                 "x-rapidapi-key": "4c48adc6cbmsh29e445de926b8a7p176d96jsna87ea16aec24",
-                'Authorization': 'Basic dXNlcjE6eldBM0QzdlVNUnNicHJyZA=='
+                'Authorization': 'Basic dXNlcjE6eldBM0QzdlVNUnNicHJyZA==',
+                'Content-Type': 'application/json' //TENTATIVO CON CONTENT TYPE
 
             }
         })
             .then(response => response.json())
             .then((responseObject) =>
                 this.setState({ albums: responseObject.search })
+                    .catch(err => {
+                        console.log(err)
+                    })
             )
+
 
     };
 
