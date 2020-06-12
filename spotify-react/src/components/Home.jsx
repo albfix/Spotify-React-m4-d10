@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from "react-bootstrap"
+//import { Container, Row, Col } from "react-bootstrap"
 
 const deezApi = "https://deezerdevs-deezer.p.rapidapi.com/search?metallica"
 
@@ -21,6 +21,12 @@ class Home extends React.Component {
                 this.setState({ albums: responseObject.search })
             )
 
+    }
+
+    render() {
+        //TRY CONSOLE IF COMPONENT WORKS 
+        console.log("rendered")
+        return
     }
 }
 export default Home
