@@ -40,6 +40,9 @@
   margin: 10px;
   color: silver;
 }
+p {
+  color:white
+}
  /*CSS SIDENAV*/
 .bm-menu {
   background:black;
