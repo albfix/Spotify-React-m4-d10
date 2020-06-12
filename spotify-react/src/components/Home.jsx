@@ -3,7 +3,7 @@ import { Container, Alert } from 'react-bootstrap'
 import Gallery from './components/Gallery'
 //import { Container, Row, Col } from "react-bootstrap"
 
-const url = "https://deezerdevs-deezer.p.rapidapi.com/search?metallica"
+
 
 class Home extends React.Component {
     constructor(props) {
@@ -17,12 +17,15 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        fetch(url,
-            {
-                headers: new Headers({
-                    'Authorization': 'Basic dXNlcjE6eldBM0QzdlVNUnNicHJyZA=='
-                })
-            })
+        fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=Rolling%20Stones", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                "x-rapidapi-key": "4c48adc6cbmsh29e445de926b8a7p176d96jsna87ea16aec24",
+                'Authorization': 'Basic dXNlcjE6eldBM0QzdlVNUnNicHJyZA=='
+
+            }
+        })
             .then(response => response.json())
             .then((responseObject) =>
                 this.setState({ albums: responseObject.search })
