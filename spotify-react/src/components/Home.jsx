@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container, Alert } from 'react-bootstrap'
+import Gallery from './components/Gallery'
 //import { Container, Row, Col } from "react-bootstrap"
 
-const deezApi = "https://deezerdevs-deezer.p.rapidapi.com/search?metallica"
+const url = "https://deezerdevs-deezer.p.rapidapi.com/search?metallica"
 
 class Home extends React.Component {
     constructor(props) {
@@ -16,7 +17,12 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
-        fetch(deezApi)
+        fetch(url,
+            {
+                headers: new Headers({
+                    'Authorization': 'Basic dXNlcjE6eldBM0QzdlVNUnNicHJyZA=='
+                })
+            })
             .then(response => response.json())
             .then((responseObject) =>
                 this.setState({ albums: responseObject.search })
