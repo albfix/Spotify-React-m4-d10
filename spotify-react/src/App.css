@@ -36,6 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.nav-link{
+  margin: 10px;
+  color: silver;
+}
  /*CSS SIDENAV*/
 .bm-menu {
   background: #373a47;
