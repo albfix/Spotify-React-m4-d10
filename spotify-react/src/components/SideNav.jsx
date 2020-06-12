@@ -1,23 +1,23 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
+import { ListGroup } from 'react-bootstrap'
 
 const Sidenav = () => (
+
     <Menu>
-        <a className="menu-item" href="/">
-            Home
-      </a>
+        <ListGroup>
+            <ListGroup.Item className="sideNav">Spotify</ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+            <ListGroup.Item className="sideNav">Home</ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+            <ListGroup.Item className="sideNav">Search</ListGroup.Item>
+        </ListGroup>
+        <ListGroup>
+            <ListGroup.Item className="sideNav">Your Library</ListGroup.Item>
+        </ListGroup>
 
-        <a className="menu-item" href="/burgers">
-            Burgers
-      </a>
-
-        <a className="menu-item" href="/pizzas">
-            Pizzas
-      </a>
-
-        <a className="menu-item" href="/desserts">
-            Desserts
-      </a>
     </Menu>
 )
 
