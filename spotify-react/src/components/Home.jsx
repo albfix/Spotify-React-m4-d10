@@ -29,7 +29,7 @@ class Home extends React.Component {
         })
             .then(response => response.json())
             .then((responseObject) =>
-                this.setState({ albums: responseObject.search })
+                this.setState({ albums: responseObject })//TOLTO IL SEARCH 
                     .catch(err => {
                         console.log(err)
                     })
@@ -51,27 +51,12 @@ class Home extends React.Component {
                 {!this.state.error && (
                     <div>/
                         <Gallery
-                            title="Harry Potter"
+                            title=""
                             loading={this.state.loading}
-                            movies={this.state.harryPotter.slice(0, 6)}
-                            comments={this.state.comments}
-                            fetchComments={this.fetchComments}
+                            cover={this.state.albums.slice(0, 6)}
+
                         />
-                        <Gallery
-                            title="Spider Man"
-                            loading={this.state.loading}
-                            movies={this.state.spiderMan.slice(0, 6)}
-                            comments={this.state.comments}
-                            fetchComments={this.fetchComments}
-                        />
-                        <Gallery
-                            title="Matrix"
-                            loading={this.state.loading}
-                            movies={this.state.matrix.slice(0, 6)}
-                            comments={this.state.comments}
-                            fetchComments={this.fetchComments}
-                        />
-                    </div>
+                    </div> // TOLTO DUE GALLERY IN PIU', RIMANE SOLO LA PRIMA DA 6 ELEMENTI COME IN SPOTIFY
                 )}
             </Container>
         )
